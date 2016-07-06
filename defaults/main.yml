@@ -18,9 +18,10 @@ solr_working_path: "{{ solr_install_base_path}}/solr"
 
 
 solr_base_path: /var/solr
-solr_home_path: "{{solr_base_path}}/data"
+solr_ephemeral_path: "{{ solr_base_path }}"
+solr_home_path: "{{ solr_ephemeral_path }}/data"
 
-solr_logs_path: "{{ solr_base_path}}/logs"
+solr_logs_path: "{{ solr_ephemeral_path }}/logs"
 solr_log4j_props: "{{ solr_base_path }}/log4j.properties"
 
 

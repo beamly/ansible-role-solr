@@ -42,6 +42,7 @@
     group: "{{ solr_group }}"
     mode: 0750
   with_items:
+    - "{{ solr_base_path }}"
     - "{{ solr_home_path }}"
     - "{{ solr_logs_path }}"
   notify: restart solr
@@ -55,7 +56,7 @@
     mode: 0640
   with_items:
     - filename: solr.xml
-      destination: "{{ solr_home_path }}"
+      destination: "{{ solr_base_path }}"
     - filename: log4j.properties
       destination: "{{ solr_base_path }}"
   notify: restart solr
